@@ -1,19 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
 
 class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body:SafeArea(
+      body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
               color: Colors.white,
-              child:Image(
+              child: Image(
                 image: AssetImage('images/firstPage.png'),
               ),
             ),
@@ -47,17 +46,23 @@ class FirstPage extends StatelessWidget {
             ),
             RaisedButton(
               child: Text("Login"),
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, '/login');
               },
             ),
             ElevatedButton(
-              onPressed: ()=>print("I am clicked"),
+              onPressed: () => print("I am clicked"),
+              child: Text("Sign Up"),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/advancedSearch');
+              },
               child: Text(
-                  "Sign Up"
+                'Guest User',
+                style: TextStyle(decoration: TextDecoration.underline),
               ),
             ),
-            Text('Guest User'),
           ],
         ),
       ),
