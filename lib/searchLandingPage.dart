@@ -51,15 +51,60 @@ class SearchLandingScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.topCenter,
                         padding: new EdgeInsets.only(
-                            top: MediaQuery.of(context).size.height * 0.17,
+                            top: MediaQuery.of(context).size.height * 0.22,
                             right: 40.0,
                             left: 40.0),
                         child: new Container(
-                          height: 300.0,
+                          height: 230.0,
                           width: MediaQuery.of(context).size.width,
-                          child: new Card(
+                          child: Card(
                             color: Color(0x8CFFFFFF),
                             elevation: 8.0,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(bottom: 10.0),
+                                  width: 250.0,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                    color: Colors.white,
+                                  ),
+                                  child: TextField(
+                                    onTap:()=>print('i am clicked!'),
+                                    decoration: InputDecoration(
+                                      fillColor: Colors.black,
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(30.0),)
+                                      ),
+                                      hintText: 'Enter a search term...',
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 250.0,
+                                  height: 50.0,
+                                  child: RaisedButton(
+                                    color: Colors.blue,
+                                    textColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30.0),
+                                        side: BorderSide(
+                                            color: Colors.blue,
+                                        )
+                                    ),
+                                    child: Text(
+                                        "Advanced Search",
+                                        style: TextStyle(fontSize: 18)
+                                    ),
+                                    onPressed: () {
+                                      Navigator.pushNamed(context, '/advancedSearch');
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       )

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'home.dart';
 import 'login.dart';
 import 'signUp.dart';
-import 'advancedSearch.dart';
+import 'advancedSearch/advancedSearch.dart';
 import 'searchLandingPage.dart';
 
 void main() => runApp(MyApp());
