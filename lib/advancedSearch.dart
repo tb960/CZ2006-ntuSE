@@ -46,6 +46,7 @@ class AdvancedSearchScreen extends StatelessWidget {
                 Container(
                   child: DropMenu(),
                 ),
+                SizedBox(height: 10.0),
                 Container(
                   child: DropMenu(),
                 ),
@@ -67,27 +68,35 @@ class _DropMenuState extends State<DropMenu> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: DropdownButton<String>(
-        hint: Text('Select Item'),
-        value: selectedUser,
-        onChanged: (String val) {
-          setState(() {
-            selectedUser = val;
-          });
-        },
-        items: users.map((String user) {
-          return DropdownMenuItem<String>(
-            value: user,
-            child: Row(
-              children: <Widget>[
-                Text(
-                  user,
-                  style: TextStyle(color: Colors.black),
-                )
-              ],
-            ),
-          );
-        }).toList(),
+      padding: EdgeInsets.only(left:15.0),
+      width: 200.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.grey,
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          hint: Text('Select Item'),
+          value: selectedUser,
+          onChanged: (String val) {
+            setState(() {
+              selectedUser = val;
+            });
+          },
+          items: users.map((String user) {
+            return DropdownMenuItem<String>(
+              value: user,
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    user,
+                    style: TextStyle(color: Colors.black),
+                  )
+                ],
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

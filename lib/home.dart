@@ -56,7 +56,7 @@ class FirstPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/advancedSearch');
+                Navigator.pushNamed(context, '/searchLanding');
               },
               child: Text(
                 'Guest User',
